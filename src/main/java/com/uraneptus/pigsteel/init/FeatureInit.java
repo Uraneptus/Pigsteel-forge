@@ -12,7 +12,7 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 public class FeatureInit {
 
     public static void addOres(final BiomeLoadingEvent event) {
-        addOre(event, OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.PIGSTEEL_ORE.get().defaultBlockState(), 10, 0, 128, 20);
+        addOre(event, OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.PIGSTEEL_ORE.get().defaultBlockState(), 10, 0, 128, 15);
     }
 
     public static void addOre(final BiomeLoadingEvent event, RuleTest rule, BlockState state, int veinSize, int minHeight, int maxHight, int amount) {
