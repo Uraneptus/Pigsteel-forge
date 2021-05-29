@@ -42,5 +42,21 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> STONE_PIGSTEEL_ORE = ITEMS.register("stone_pigsteel_ore",
             () -> new BlockItem(BlockInit.STONE_PIGSTEEL_ORE.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
+    //Block Items Waxed
+    public static final RegistryObject<BlockItem> WAXED_PIGSTEEL_BLOCK = ITEMS.register("waxed_pigsteel_block",
+            () -> new BlockItem(BlockInit.WAXED_PIGSTEEL_BLOCK.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_CUT_PIGSTEEL = ITEMS.register("waxed_cut_pigsteel",
+            () -> new BlockItem(BlockInit.WAXED_CUT_PIGSTEEL.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_INFECTED_CUT_PIGSTEEL = ITEMS.register("waxed_infected_cut_pigsteel",
+            () -> new BlockItem(BlockInit.WAXED_INFECTED_CUT_PIGSTEEL.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_CORRUPTED_CUT_PIGSTEEL = ITEMS.register("waxed_corrupted_cut_pigsteel",
+            () -> new BlockItem(BlockInit.WAXED_CORRUPTED_CUT_PIGSTEEL.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_ZOMBIFIED_CUT_PIGSTEEL = ITEMS.register("waxed_zombified_cut_pigsteel",
+            () -> new BlockItem(BlockInit.WAXED_ZOMBIFIED_CUT_PIGSTEEL.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
 
 }

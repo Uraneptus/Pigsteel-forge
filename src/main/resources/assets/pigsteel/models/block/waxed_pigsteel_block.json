@@ -1,6 +1,7 @@
 {
     "parent": "block/cube_all",
     "textures": {
-      "all": "pigsteel:block/cut_pigsteel"
+      "all": "pigsteel:block/pigsteel_block"
     }
-  }
+}
+
