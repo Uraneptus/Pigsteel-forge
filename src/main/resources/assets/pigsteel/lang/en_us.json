@@ -13,6 +13,16 @@
     "block.pigsteel.waxed_zombified_cut_pigsteel": "Waxed Zombified Cut Pigsteel",
     "block.pigsteel.waxed_pigsteel_block": "Waxed Block of Pigsteel",
 
+    "block.pigsteel.cut_pigsteel_stairs": "Cut Pigsteel Stairs",
+    "block.pigsteel.infected_cut_pigsteel_stairs": "Infected Cut Pigsteel Stairs",
+    "block.pigsteel.corrupted_cut_pigsteel_stairs": "Corrupted Cut Pigsteel Stairs",
+    "block.pigsteel.zombified_cut_pigsteel_stairs": "Zombified Cut Pigsteel Stairs",
+
+    "block.pigsteel.waxed_cut_pigsteel_stairs": "Waxed Cut Pigsteel Stairs",
+    "block.pigsteel.waxed_infected_cut_pigsteel_stairs": "Waxed Infected Cut Pigsteel Stairs",
+    "block.pigsteel.waxed_corrupted_cut_pigsteel_stairs": "Waxed Corrupted Cut Pigsteel Stairs",
+    "block.pigsteel.waxed_zombified_cut_pigsteel_stairs": "Waxed Zombified Cut Pigsteel Stairs",
+
     "item.pigsteel.pigsteel_ingot": "Pigsteel Ingot",
     "item.pigsteel.pigsteel_nugget": "Pigsteel Nugget"
 
