@@ -58,7 +58,7 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> WAXED_ZOMBIFIED_CUT_PIGSTEEL = ITEMS.register("waxed_zombified_cut_pigsteel",
             () -> new BlockItem(BlockInit.WAXED_ZOMBIFIED_CUT_PIGSTEEL.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
-    //Block Items Stairs
+    //Block Item Stairs
     public static final RegistryObject<BlockItem> CUT_PIGSTEEL_STAIRS = ITEMS.register("cut_pigsteel_stairs",
             () -> new BlockItem(BlockInit.CUT_PIGSTEEL_STAIRS.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
@@ -84,5 +84,30 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS = ITEMS.register("waxed_zombified_cut_pigsteel_stairs",
             () -> new BlockItem(BlockInit.WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
+    //Block Item Slabs
+    public static final RegistryObject<BlockItem> CUT_PIGSTEEL_SLAB = ITEMS.register("cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> INFECTED_CUT_PIGSTEEL_SLAB = ITEMS.register("infected_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.INFECTED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> CORRUPTED_CUT_PIGSTEEL_SLAB = ITEMS.register("corrupted_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.CORRUPTED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> ZOMBIFIED_CUT_PIGSTEEL_SLAB = ITEMS.register("zombified_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.ZOMBIFIED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+
+    public static final RegistryObject<BlockItem> WAXED_CUT_PIGSTEEL_SLAB = ITEMS.register("waxed_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.WAXED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_INFECTED_CUT_PIGSTEEL_SLAB = ITEMS.register("waxed_infected_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.WAXED_INFECTED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB = ITEMS.register("waxed_corrupted_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<BlockItem> WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB = ITEMS.register("waxed_zombified_cut_pigsteel_slab",
+            () -> new BlockItem(BlockInit.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
 
 }
