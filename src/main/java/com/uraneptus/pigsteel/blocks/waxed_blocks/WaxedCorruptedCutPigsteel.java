@@ -1,27 +1,28 @@
-package com.uraneptus.pigsteel.blocks;
+package com.uraneptus.pigsteel.blocks.waxed_blocks;
 
 import com.uraneptus.pigsteel.init.BlockInit;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
+import net.minecraft.item.AxeItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
-public class ZombifiedCutPigsteel extends Block {
+public class WaxedCorruptedCutPigsteel extends Block {
 
-    public ZombifiedCutPigsteel(Properties properties) {
-        super(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).randomTicks());
+    public WaxedCorruptedCutPigsteel(AbstractBlock.Properties properties) {
+        super(properties);
     }
 
     public ActionResultType use(BlockState state, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
-        if(playerEntity.getItemInHand(hand).getItem() == Items.HONEYCOMB) {
+        if(playerEntity.getItemInHand(hand).getItem() instanceof AxeItem) {
             playerEntity.swing(hand);
-            world.setBlockAndUpdate(blockPos, BlockInit.WAXED_CUT_PIGSTEEL.get().defaultBlockState());
+            world.setBlockAndUpdate(blockPos, BlockInit.CORRUPTED_CUT_PIGSTEEL.get().defaultBlockState());
         }
         return ActionResultType.PASS;
     }
-
 }
