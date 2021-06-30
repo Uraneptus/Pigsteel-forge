@@ -19,7 +19,7 @@ public class ZombifiedCutPigsteel extends Block {
     public ActionResultType use(BlockState state, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
         if(playerEntity.getItemInHand(hand).getItem() == Items.HONEYCOMB) {
             playerEntity.swing(hand);
-            world.setBlockAndUpdate(blockPos, BlockInit.WAXED_CUT_PIGSTEEL.get().defaultBlockState());
+            world.setBlockAndUpdate(blockPos, BlockInit.WAXED_ZOMBIFIED_CUT_PIGSTEEL.get().defaultBlockState());
         }
         return ActionResultType.PASS;
     }
