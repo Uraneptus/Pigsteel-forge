@@ -6,10 +6,19 @@ import com.uraneptus.pigsteel.blocks.slabs.CorruptedCutPigsteelSlabs;
 import com.uraneptus.pigsteel.blocks.slabs.CutPigsteelSlabs;
 import com.uraneptus.pigsteel.blocks.slabs.InfectedCutPigsteelSlabs;
 import com.uraneptus.pigsteel.blocks.slabs.ZombifiedCutPigsteelSlabs;
+import com.uraneptus.pigsteel.blocks.slabs.waxed_slabs.WaxedCorruptedCutPigsteelSlab;
+import com.uraneptus.pigsteel.blocks.slabs.waxed_slabs.WaxedCutPigsteelSlab;
+import com.uraneptus.pigsteel.blocks.slabs.waxed_slabs.WaxedInfectedCutPigsteelSlab;
+import com.uraneptus.pigsteel.blocks.slabs.waxed_slabs.WaxedZombifiedCutPigsteelSlab;
 import com.uraneptus.pigsteel.blocks.stairs.CorruptedCutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.stairs.CutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.stairs.InfectedCutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.stairs.ZombifiedCutPigsteelStairs;
+import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedCorruptedCutPigsteelStairs;
+import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedCutPigsteelStairs;
+import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedInfectedCutPigsteelStairs;
+import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedZombifiedCutPigsteelStairs;
+import com.uraneptus.pigsteel.blocks.waxed_blocks.*;
 import net.minecraft.block.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -41,21 +50,21 @@ public class BlockInit {
     public static final RegistryObject<Block> STONE_PIGSTEEL_ORE = BLOCKS.register("stone_pigsteel_ore",
             () -> new PigsteelOre(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
 
-    //Waxed
+    //waxed blocks
     public static final RegistryObject<Block> WAXED_PIGSTEEL_BLOCK = BLOCKS.register("waxed_pigsteel_block",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new WaxedPigsteelBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_CUT_PIGSTEEL = BLOCKS.register("waxed_cut_pigsteel",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCutPigsteel(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_INFECTED_CUT_PIGSTEEL = BLOCKS.register("waxed_infected_cut_pigsteel",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedInfectedCutPigsteel(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_CORRUPTED_CUT_PIGSTEEL = BLOCKS.register("waxed_corrupted_cut_pigsteel",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCorruptedCutPigsteel(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_ZOMBIFIED_CUT_PIGSTEEL = BLOCKS.register("waxed_zombified_cut_pigsteel",
-            () -> new Block(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedZombifiedCutPigsteel(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     //Stairs
     public static final RegistryObject<Block> CUT_PIGSTEEL_STAIRS = BLOCKS.register("cut_pigsteel_stairs",
@@ -70,18 +79,18 @@ public class BlockInit {
     public static final RegistryObject<Block> ZOMBIFIED_CUT_PIGSTEEL_STAIRS = BLOCKS.register("zombified_cut_pigsteel_stairs",
             () -> new ZombifiedCutPigsteelStairs(ZOMBIFIED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
-
+    //waxed stairs
     public static final RegistryObject<Block> WAXED_CUT_PIGSTEEL_STAIRS = BLOCKS.register("waxed_cut_pigsteel_stairs",
-            () -> new StairsBlock(WAXED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCutPigsteelStairs(WAXED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_INFECTED_CUT_PIGSTEEL_STAIRS = BLOCKS.register("waxed_infected_cut_pigsteel_stairs",
-            () -> new StairsBlock(WAXED_INFECTED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedInfectedCutPigsteelStairs(WAXED_INFECTED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_CORRUPTED_CUT_PIGSTEEL_STAIRS = BLOCKS.register("waxed_corrupted_cut_pigsteel_stairs",
-            () -> new StairsBlock(WAXED_CORRUPTED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCorruptedCutPigsteelStairs(WAXED_CORRUPTED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS = BLOCKS.register("waxed_zombified_cut_pigsteel_stairs",
-            () -> new StairsBlock(WAXED_ZOMBIFIED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedZombifiedCutPigsteelStairs(WAXED_ZOMBIFIED_CUT_PIGSTEEL.get().defaultBlockState(), AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     //Slabs
     public static final RegistryObject<Block> CUT_PIGSTEEL_SLAB = BLOCKS.register("cut_pigsteel_slab",
@@ -96,18 +105,18 @@ public class BlockInit {
     public static final RegistryObject<Block> ZOMBIFIED_CUT_PIGSTEEL_SLAB = BLOCKS.register("zombified_cut_pigsteel_slab",
             () -> new ZombifiedCutPigsteelSlabs(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
-
+    //waxed slabs
     public static final RegistryObject<Block> WAXED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_cut_pigsteel_slab",
-            () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCutPigsteelSlab(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_INFECTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_infected_cut_pigsteel_slab",
-            () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedInfectedCutPigsteelSlab(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_corrupted_cut_pigsteel_slab",
-            () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedCorruptedCutPigsteelSlab(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_zombified_cut_pigsteel_slab",
-            () -> new SlabBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
+            () -> new WaxedZombifiedCutPigsteelSlab(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK)));
 
 
 
