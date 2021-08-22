@@ -1,26 +1,32 @@
 package com.uraneptus.pigsteel.blocks.stairs;
 
 import com.uraneptus.pigsteel.init.BlockInit;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
-import net.minecraft.state.properties.StairsShape;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.block.state.properties.StairsShape;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.level.Level;
 
-public class ZombifiedCutPigsteelStairs extends StairsBlock {
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
+
+public class ZombifiedCutPigsteelStairs extends StairBlock {
 
     public ZombifiedCutPigsteelStairs(BlockState state, Properties properties) {
-        super(state, AbstractBlock.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).randomTicks());
+        super(state, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).randomTicks());
     }
 
-    public ActionResultType use(BlockState state, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
+    public InteractionResult use(BlockState state, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult result) {
         if(playerEntity.getItemInHand(hand).getItem() == Items.HONEYCOMB) {
             Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
             Boolean watered = state.getValue(BlockStateProperties.WATERLOGGED);
@@ -34,6 +40,6 @@ public class ZombifiedCutPigsteelStairs extends StairsBlock {
                     .setValue(BlockStateProperties.STAIRS_SHAPE, shape)
                     .setValue(BlockStateProperties.HALF, half));
         }
-        return ActionResultType.PASS;
+        return InteractionResult.PASS;
     }
 }

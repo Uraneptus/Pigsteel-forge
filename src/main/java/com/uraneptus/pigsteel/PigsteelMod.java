@@ -27,7 +27,7 @@ public class PigsteelMod
         BlockInit.BLOCKS.register(event_bus);
 
 
-        MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
+        //MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
