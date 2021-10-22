@@ -16,23 +16,23 @@ import org.apache.logging.log4j.Logger;
 @Mod.EventBusSubscriber(modid = PigsteelMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class PigsteelMod
 {
-    private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "pigsteel";
 
     public PigsteelMod() {
         IEventBus event_bus = FMLJavaModLoadingContext.get().getModEventBus();
         event_bus.addListener(this::setup);
 
+
+        FeatureInit.FEATURES.register(event_bus);
         ItemInit.ITEMS.register(event_bus);
         BlockInit.BLOCKS.register(event_bus);
 
-
-        //MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::addOres);
+        MinecraftForge.EVENT_BUS.addListener(FeatureInit.Configs::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        FeatureInit.Configs.registerFeatures();
     }
 
 

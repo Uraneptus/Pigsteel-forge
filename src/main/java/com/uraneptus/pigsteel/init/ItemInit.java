@@ -42,6 +42,9 @@ public class ItemInit {
     public static final RegistryObject<BlockItem> STONE_PIGSTEEL_ORE = ITEMS.register("stone_pigsteel_ore",
             () -> new BlockItem(BlockInit.STONE_PIGSTEEL_ORE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
+    public static final RegistryObject<BlockItem> DEEPSLATE_PIGSTEEL_ORE = ITEMS.register("deepslate_pigsteel_ore",
+            () -> new BlockItem(BlockInit.DEEPSLATE_PIGSTEEL_ORE.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+
     //Block Items Waxed
     public static final RegistryObject<BlockItem> WAXED_PIGSTEEL_BLOCK = ITEMS.register("waxed_pigsteel_block",
             () -> new BlockItem(BlockInit.WAXED_PIGSTEEL_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));

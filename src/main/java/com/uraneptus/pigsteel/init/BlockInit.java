@@ -54,6 +54,9 @@ public class BlockInit {
     public static final RegistryObject<Block> STONE_PIGSTEEL_ORE = BLOCKS.register("stone_pigsteel_ore",
             () -> new PigsteelOre(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
+    public static final RegistryObject<Block> DEEPSLATE_PIGSTEEL_ORE = BLOCKS.register("deepslate_pigsteel_ore",
+            () -> new PigsteelOre(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
     //waxed blocks
     public static final RegistryObject<Block> WAXED_PIGSTEEL_BLOCK = BLOCKS.register("waxed_pigsteel_block",
             () -> new WaxedPigsteelBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
