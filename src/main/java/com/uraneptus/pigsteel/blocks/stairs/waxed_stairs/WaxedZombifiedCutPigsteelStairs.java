@@ -1,28 +1,28 @@
 package com.uraneptus.pigsteel.blocks.stairs.waxed_stairs;
 
 import com.uraneptus.pigsteel.init.BlockInit;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.AxeItem;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
-import net.minecraft.state.properties.StairsShape;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.block.state.properties.StairsShape;
+import net.minecraft.world.phys.BlockHitResult;
 
-public class WaxedZombifiedCutPigsteelStairs extends StairsBlock{
+public class WaxedZombifiedCutPigsteelStairs extends StairBlock{
 
-    public WaxedZombifiedCutPigsteelStairs(BlockState state, AbstractBlock.Properties properties) {
+    public WaxedZombifiedCutPigsteelStairs(BlockState state, BlockBehaviour.Properties properties) {
         super(state, properties);
     }
 
-    public ActionResultType use(BlockState state, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
+    public InteractionResult use(BlockState state, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult result) {
         if(playerEntity.getItemInHand(hand).getItem() instanceof AxeItem) {
             Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
             Boolean watered = state.getValue(BlockStateProperties.WATERLOGGED);
@@ -36,6 +36,6 @@ public class WaxedZombifiedCutPigsteelStairs extends StairsBlock{
                     .setValue(BlockStateProperties.STAIRS_SHAPE, shape)
                     .setValue(BlockStateProperties.HALF, half));
         }
-        return ActionResultType.PASS;
+        return InteractionResult.PASS;
     }
 }
