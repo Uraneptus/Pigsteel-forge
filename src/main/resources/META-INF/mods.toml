@@ -1,15 +1,16 @@
 modLoader="javafml" #mandatory
-loaderVersion="[37,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[37,)" #mandatory
 license="Apache License Version 2.0"
 
 [[mods]] #mandatory
-modId="pigsteel" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="Pigsteel Mod" #mandatory
-logoFile="icon.png" #optional
-credits="Credits to DigitalPear_11 for the original fabric version of this mod" #optional
-authors="Uraneptus, DigitalPear_11, PeterGamesGR" #optional
-description='''
+modId = "pigsteel" #mandatory
+version = "${file.jarVersion}" #mandatory
+logoFile = "pigsteel_icon.png" #optional
+authors = "Uraneptus, DigitalPear_11, PeterGamesGR" #optional
+credits = "Credits to DigitalPear_11 for the original fabric version of this mod" #optional
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/pigsteel-forge"
+displayName = "Pigsteel Mod" #mandatory
+description = '''
 A mod that adds a nether counterpart to iron.
 '''
 [[dependencies.pigsteel]] #optional
@@ -24,3 +25,6 @@ A mod that adds a nether counterpart to iron.
     versionRange="[1.17.1,)"
     ordering="NONE"
     side="BOTH"
+
+[modproperties.pigsteel]
+    catalogueImageIcon= "pigsteel_icon.png"

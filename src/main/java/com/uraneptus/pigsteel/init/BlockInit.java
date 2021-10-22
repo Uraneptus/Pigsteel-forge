@@ -19,14 +19,13 @@ import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedCutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedInfectedCutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.stairs.waxed_stairs.WaxedZombifiedCutPigsteelStairs;
 import com.uraneptus.pigsteel.blocks.waxed_blocks.*;
-import net.minecraftforge.fmllegacy.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockInit {
 
