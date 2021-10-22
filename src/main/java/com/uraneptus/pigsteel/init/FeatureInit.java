@@ -30,6 +30,7 @@ public class FeatureInit {
                 .configured(new OreConfiguration(OreConfiguration.Predicates.NETHERRACK, BlockInit.PIGSTEEL_ORE.get().defaultBlockState(), 7))
                     .range(Features.Decorators.FULL_RANGE).squared().count(20);
 
+
         public static void onBiomeLoad(BiomeLoadingEvent event) {
             BiomeGenerationSettingsBuilder generation = event.getGeneration();
 
@@ -37,7 +38,6 @@ public class FeatureInit {
                 generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PIGSTEEL_ORE_CONFIG);
             }
         }
-
 
         private static <FC extends FeatureConfiguration> void register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
             Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(PigsteelMod.MOD_ID, name), configuredFeature);
