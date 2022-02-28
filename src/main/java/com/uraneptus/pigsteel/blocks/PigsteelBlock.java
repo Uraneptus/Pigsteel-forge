@@ -2,8 +2,11 @@ package com.uraneptus.pigsteel.blocks;
 
 import com.uraneptus.pigsteel.init.BlockInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.ParticleUtils;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +22,7 @@ public class PigsteelBlock extends Block {
 
 
     public PigsteelBlock(Properties properties) {
-        super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
+        super(properties);
     }
 
     public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {
@@ -31,11 +34,4 @@ public class PigsteelBlock extends Block {
         }
     }
 
-    public InteractionResult use(BlockState state, Level world, BlockPos blockPos, Player playerEntity, InteractionHand hand, BlockHitResult result) {
-        if(playerEntity.getItemInHand(hand).getItem() == Items.HONEYCOMB) {
-            playerEntity.swing(hand);
-            world.setBlockAndUpdate(blockPos, BlockInit.WAXED_PIGSTEEL_BLOCK.get().defaultBlockState());
-        }
-        return InteractionResult.PASS;
-    }
 }

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.uraneptus.pigsteel.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "minVersion": "0.8",
+  "refmap": "pigsteel.refmap.json",
+  "mixins": [
+    "AxeItemMixin",
+    "HoneycombItemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
