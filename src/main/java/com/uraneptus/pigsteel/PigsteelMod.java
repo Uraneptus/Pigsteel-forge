@@ -24,12 +24,12 @@ public class PigsteelMod
         ItemInit.ITEMS.register(event_bus);
         BlockInit.BLOCKS.register(event_bus);
 
-        MinecraftForge.EVENT_BUS.addListener(FeatureInit.Configs::onBiomeLoad);
+        MinecraftForge.EVENT_BUS.addListener(FeatureInit.Placement::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        FeatureInit.Configs.registerFeatures();
+        FeatureInit.Config.registerFeatures();
     }
 
 

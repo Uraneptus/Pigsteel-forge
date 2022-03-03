@@ -2,13 +2,11 @@ package com.uraneptus.pigsteel.init;
 
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.blocks.*;
-import com.uraneptus.pigsteel.blocks.CutSlabs;
-import com.uraneptus.pigsteel.blocks.CutStairs;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BlockInit {
     public static final BlockBehaviour.Properties CUT_BLOCKS = BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK);
