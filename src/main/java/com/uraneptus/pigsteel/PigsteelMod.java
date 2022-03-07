@@ -19,17 +19,15 @@ public class PigsteelMod
         IEventBus event_bus = FMLJavaModLoadingContext.get().getModEventBus();
         event_bus.addListener(this::setup);
 
-
-        FeatureInit.FEATURES.register(event_bus);
         ItemInit.ITEMS.register(event_bus);
         BlockInit.BLOCKS.register(event_bus);
 
-        MinecraftForge.EVENT_BUS.addListener(FeatureInit.Placement::onBiomeLoad);
+        MinecraftForge.EVENT_BUS.addListener(FeatureInit::onBiomeLoad);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        FeatureInit.Config.registerFeatures();
+        FeatureInit.registerFeatures();
     }
 
 

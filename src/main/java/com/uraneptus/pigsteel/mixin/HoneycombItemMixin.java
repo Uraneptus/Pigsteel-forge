@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(HoneycombItem.class)
-public final class HoneycombItemMixin {
+public class HoneycombItemMixin {
 
     @Inject(method = "useOn", at = @At("HEAD"))
     private void pigsteelUseOnInject(UseOnContext pContext, CallbackInfoReturnable<InteractionResult> cir) {
