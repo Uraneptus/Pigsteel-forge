@@ -1,4 +1,4 @@
-package com.uraneptus.pigsteel;
+package com.uraneptus.pigsteel.other;
 
 import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;

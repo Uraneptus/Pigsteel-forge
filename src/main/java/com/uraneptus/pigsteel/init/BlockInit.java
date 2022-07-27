@@ -60,4 +60,16 @@ public class BlockInit {
     public static final RegistryObject<Block> WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_corrupted_cut_pigsteel_slab", () -> new SlabBlock(CUT_BLOCKS));
     public static final RegistryObject<Block> WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_zombified_cut_pigsteel_slab", () -> new SlabBlock(CUT_BLOCKS));
 
+    //Cut Vertical Slabs
+    public static final RegistryObject<Block> VERTICAL_ZOMBIFIED_CUT_PIGSTEEL_SLAB = BLOCKS.register("vertical_zombified_cut_pigsteel_slab", () -> new ModVerticalSlabs(CUT_BLOCKS));
+    public static final RegistryObject<Block> VERTICAL_CORRUPTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("vertical_corrupted_cut_pigsteel_slab", () -> new CutVerticalSlabs(VERTICAL_ZOMBIFIED_CUT_PIGSTEEL_SLAB.get().defaultBlockState(), CUT_BLOCKS));
+    public static final RegistryObject<Block> VERTICAL_INFECTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("vertical_infected_cut_pigsteel_slab", () -> new CutVerticalSlabs(VERTICAL_CORRUPTED_CUT_PIGSTEEL_SLAB.get().defaultBlockState(), CUT_BLOCKS));
+    public static final RegistryObject<Block> VERTICAL_CUT_PIGSTEEL_SLAB = BLOCKS.register("vertical_cut_pigsteel_slab", () -> new CutVerticalSlabs(VERTICAL_INFECTED_CUT_PIGSTEEL_SLAB.get().defaultBlockState(), CUT_BLOCKS));
+
+    //Waxed Cut Vertical Slabs
+    public static final RegistryObject<Block> WAXED_VERTICAL_ZOMBIFIED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_vertical_zombified_cut_pigsteel_slab", () -> new ModVerticalSlabs(CUT_BLOCKS));
+    public static final RegistryObject<Block> WAXED_VERTICAL_CORRUPTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_vertical_corrupted_cut_pigsteel_slab", () -> new ModVerticalSlabs(CUT_BLOCKS));
+    public static final RegistryObject<Block> WAXED_VERTICAL_INFECTED_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_vertical_infected_cut_pigsteel_slab", () -> new ModVerticalSlabs(CUT_BLOCKS));
+    public static final RegistryObject<Block> WAXED_VERTICAL_CUT_PIGSTEEL_SLAB = BLOCKS.register("waxed_vertical_cut_pigsteel_slab", () -> new ModVerticalSlabs(CUT_BLOCKS));
+
 }

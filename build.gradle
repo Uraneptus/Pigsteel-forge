@@ -85,6 +85,8 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     runtimeOnly fg.deobf("curse.maven:catalogue-459701:3559402")
+    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
+    runtimeOnly fg.deobf("curse.maven:quark-243121:3687633")
 }
 
 mixin {

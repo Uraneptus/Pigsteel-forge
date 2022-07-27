@@ -26,6 +26,14 @@
 	  "pigsteel:waxed_cut_pigsteel_slab",
       "pigsteel:waxed_infected_cut_pigsteel_slab",
       "pigsteel:waxed_corrupted_cut_pigsteel_slab",
-      "pigsteel:waxed_zombified_cut_pigsteel_slab"
+      "pigsteel:waxed_zombified_cut_pigsteel_slab",
+      "pigsteel:vertical_cut_pigsteel_slab",
+      "pigsteel:vertical_infected_cut_pigsteel_slab",
+      "pigsteel:vertical_corrupted_cut_pigsteel_slab",
+      "pigsteel:vertical_zombified_cut_pigsteel_slab",
+      "pigsteel:waxed_vertical_cut_pigsteel_slab",
+      "pigsteel:waxed_vertical_infected_cut_pigsteel_slab",
+      "pigsteel:waxed_vertical_corrupted_cut_pigsteel_slab",
+      "pigsteel:waxed_vertical_zombified_cut_pigsteel_slab"
     ]
   }

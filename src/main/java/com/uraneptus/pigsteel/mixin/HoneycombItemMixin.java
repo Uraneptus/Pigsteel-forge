@@ -1,7 +1,7 @@
 package com.uraneptus.pigsteel.mixin;
 
 import com.google.common.collect.BiMap;
-import com.uraneptus.pigsteel.MixinSuppliers;
+import com.uraneptus.pigsteel.other.MixinSuppliers;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;

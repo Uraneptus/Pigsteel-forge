@@ -34,6 +34,16 @@
     "block.pigsteel.waxed_corrupted_cut_pigsteel_slab": "Waxed Corrupted Cut Pigsteel Slab",
     "block.pigsteel.waxed_zombified_cut_pigsteel_slab": "Waxed Zombified Cut Pigsteel Slab",
 
+    "block.pigsteel.vertical_cut_pigsteel_slab": "Vertical Cut Pigsteel Slab",
+    "block.pigsteel.vertical_infected_cut_pigsteel_slab": "Vertical Infected Cut Pigsteel Slab",
+    "block.pigsteel.vertical_corrupted_cut_pigsteel_slab": "Vertical Corrupted Cut Pigsteel Slab",
+    "block.pigsteel.vertical_zombified_cut_pigsteel_slab": "Vertical Zombified Cut Pigsteel Slab",
+
+    "block.pigsteel.waxed_vertical_cut_pigsteel_slab": "Waxed Vertical Cut Pigsteel Slab",
+    "block.pigsteel.waxed_vertical_infected_cut_pigsteel_slab": "Waxed Vertical Infected Cut Pigsteel Slab",
+    "block.pigsteel.waxed_vertical_corrupted_cut_pigsteel_slab": "Waxed Vertical Corrupted Cut Pigsteel Slab",
+    "block.pigsteel.waxed_vertical_zombified_cut_pigsteel_slab": "Waxed Vertical Zombified Cut Pigsteel Slab",
+
     "item.pigsteel.pigsteel_ingot": "Pigsteel Ingot",
     "item.pigsteel.pigsteel_nugget": "Pigsteel Nugget"
 
