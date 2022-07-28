@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[40,)" #mandatory
+loaderVersion="[41,)" #mandatory
 license="Apache License Version 2.0"
 
 [[mods]] #mandatory
@@ -16,13 +16,13 @@ A mod that adds a nether counterpart to iron.
 [[dependencies.pigsteel]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[40,)" #mandatory
+    versionRange="[41.1,)" #mandatory
     ordering="NONE"
     side="BOTH"
 [[dependencies.pigsteel]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,)"
+    versionRange="[1.19,)"
     ordering="NONE"
     side="BOTH"
 
