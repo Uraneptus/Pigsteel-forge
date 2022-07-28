@@ -8,6 +8,8 @@ import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionSerializer;
 import net.minecraftforge.fml.ModList;
 
+import net.minecraftforge.common.crafting.conditions.ICondition.IContext;
+
 public class QuarkRecipeConditionFlag implements ICondition {
 
     private final ResourceLocation location;
@@ -24,12 +26,12 @@ public class QuarkRecipeConditionFlag implements ICondition {
     }
 
     @Override
-    public boolean test() {
+    public boolean test(IContext context) {
        if (PigsteelMod.QUARK_FLAG) {
            JsonObject jsonObject = new JsonObject();
            jsonObject.addProperty("type", "quark:flag");
            jsonObject.addProperty("flag", this.flag);
-           return CraftingHelper.getCondition(jsonObject).test();
+           return CraftingHelper.getCondition(jsonObject).test(context);
        }
        return false;
     }

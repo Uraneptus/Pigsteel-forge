@@ -23,6 +23,8 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 //Original Waxing/Scrapping Code by MiteBeMana, used with Permission
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class CutPigsteelStairBlock extends StairBlock {
 
     public CutPigsteelStairBlock(BlockState state, Properties properties) {

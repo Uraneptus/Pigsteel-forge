@@ -17,9 +17,9 @@ public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PigsteelMod.MOD_ID);
 
     //Ores
-    public static final RegistryObject<Block> PIGSTEEL_ORE = BLOCKS.register("pigsteel_ore", () -> new OreBlock(NETHER_ORE, UniformInt.of(1, 2)));
-    public static final RegistryObject<Block> STONE_PIGSTEEL_ORE = BLOCKS.register("stone_pigsteel_ore", () -> new OreBlock(BLOCK));
-    public static final RegistryObject<Block> DEEPSLATE_PIGSTEEL_ORE = BLOCKS.register("deepslate_pigsteel_ore", () -> new OreBlock(BLOCK));
+    public static final RegistryObject<Block> PIGSTEEL_ORE = BLOCKS.register("pigsteel_ore", () -> new DropExperienceBlock(NETHER_ORE, UniformInt.of(1, 2)));
+    public static final RegistryObject<Block> STONE_PIGSTEEL_ORE = BLOCKS.register("stone_pigsteel_ore", () -> new DropExperienceBlock(BLOCK));
+    public static final RegistryObject<Block> DEEPSLATE_PIGSTEEL_ORE = BLOCKS.register("deepslate_pigsteel_ore", () -> new DropExperienceBlock(BLOCK));
 
     //Block
     public static final RegistryObject<Block> PIGSTEEL_BLOCK = BLOCKS.register("pigsteel_block", () -> new PigsteelBlock(BLOCK));

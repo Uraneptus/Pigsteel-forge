@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableBiMap;
 import com.uraneptus.pigsteel.init.BlockInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
@@ -19,6 +20,9 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 //Original Oxidization Code by MiteBeMana, used with Permission
+import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class ZombifyingCutPigsteelSlabBlock extends CutPigsteelSlabBlock implements WeatheringCopper {
     private final WeatheringCopper.WeatherState weatherState;
 
@@ -38,7 +42,7 @@ public class ZombifyingCutPigsteelSlabBlock extends CutPigsteelSlabBlock impleme
     public static final Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
 
     @Override
-    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, Random random) {
+    public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.dimension() == Level.OVERWORLD) {
             this.onRandomTick(blockState, level, pos, random);
         }

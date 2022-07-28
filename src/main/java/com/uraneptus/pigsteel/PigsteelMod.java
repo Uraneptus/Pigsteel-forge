@@ -1,7 +1,6 @@
 package com.uraneptus.pigsteel;
 
 import com.uraneptus.pigsteel.init.BlockInit;
-import com.uraneptus.pigsteel.init.FeatureInit;
 import com.uraneptus.pigsteel.init.ItemInit;
 import com.uraneptus.pigsteel.other.QuarkRecipeConditionFlag;
 import net.minecraft.resources.ResourceLocation;
@@ -32,8 +31,7 @@ public class PigsteelMod
         CraftingHelper.register(new QuarkRecipeConditionFlag.Serializer());
         ItemInit.ITEMS.register(event_bus);
         BlockInit.BLOCKS.register(event_bus);
-
-        MinecraftForge.EVENT_BUS.addListener(FeatureInit.Placement::onBiomeLoad);
+        
         MinecraftForge.EVENT_BUS.register(this);
     }
 

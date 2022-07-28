@@ -21,6 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 //Original Waxing/Scrapping Code by MiteBeMana, used with Permission
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class CutPigsteelBlock extends Block {
 
     public CutPigsteelBlock(Properties properties) {

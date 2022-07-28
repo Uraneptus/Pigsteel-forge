@@ -43,6 +43,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 //Original Waxing/Scrapping Code by MiteBeMana, used with Permission
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+
 public class CutPigsteelVerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<VerticalSlabType> TYPE = EnumProperty.create("type", VerticalSlabType.class);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
