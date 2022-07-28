@@ -20,7 +20,7 @@ public class PigsteelBlock extends Block {
         if(world.dimensionType().bedWorks()) {
             world.setBlock(pos, Blocks.IRON_BLOCK.defaultBlockState(), 3);
             world.levelEvent(2009, pos, 0);
-            world.playSound((Player)null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,
+            world.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,
                     1.0F, (1.0F + world.getRandom().nextFloat() * 0.2F) * 0.7F);
         }
     }

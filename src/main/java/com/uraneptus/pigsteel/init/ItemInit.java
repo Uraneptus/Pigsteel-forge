@@ -1,12 +1,9 @@
 package com.uraneptus.pigsteel.init;
 
 import com.uraneptus.pigsteel.PigsteelMod;
-import com.uraneptus.pigsteel.blocks.ModVerticalSlabs;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
