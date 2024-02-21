@@ -1,8 +1,0 @@
-{
-  "parent": "pigsteel:block/vertical_slab",
-  "textures": {
-    "side": "pigsteel:block/zombified_cut_pigsteel",
-    "top": "pigsteel:block/zombified_cut_pigsteel",
-    "bottom": "pigsteel:block/zombified_cut_pigsteel"
-  }
-}
