@@ -24,9 +24,6 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class PigsteelBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PigsteelMod.MOD_ID);
-    public static Map<RegistryObject<Block>, RegistryObject<Block>> PIGSTEEL_WAXING_MAP = new HashMap<>();
-    public static Map<RegistryObject<Block>, RegistryObject<Block>> PIGSTEEL_ZOMBIFYING_MAP = new HashMap<>();
-
     public static Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
             .put(PigsteelBlocks.UNAFFECTED_REFINED_PIGSTEEL.get(), PigsteelBlocks.INFECTED_REFINED_PIGSTEEL.get())
             .put(PigsteelBlocks.INFECTED_REFINED_PIGSTEEL.get(), PigsteelBlocks.CORRUPTED_REFINED_PIGSTEEL.get())

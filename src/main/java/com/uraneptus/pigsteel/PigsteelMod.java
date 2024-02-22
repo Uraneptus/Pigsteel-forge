@@ -71,7 +71,7 @@ public class PigsteelMod
         generator.addProvider(includeServer, blockTagsProvider);
         generator.addProvider(includeServer, new PigsteelItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(includeServer, new PigsteelBiomeTagsProvider(packOutput, lookupProvider, fileHelper));
-        //generator.addProvider(includeServer, new PigsteelLootTableProvider(packOutput));
+        generator.addProvider(includeServer, new PigsteelLootTableProvider(packOutput));
         //generator.addProvider(includeServer, new PigsteelRecipeProvider(packOutput));
     }
 

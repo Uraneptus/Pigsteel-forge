@@ -2,6 +2,7 @@ package com.uraneptus.pigsteel.core.events;
 
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
+import com.uraneptus.pigsteel.core.registry.PigsteelItems;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -58,6 +59,9 @@ public class PigsteelClientEvents {
         if (tabKey == CreativeModeTabs.NATURAL_BLOCKS) {
             addBefore(Items.ANCIENT_DEBRIS, PigsteelBlocks.PORKSLAG, event);
             addAfter(Items.RAW_IRON_BLOCK, PigsteelBlocks.PIGSTEEL_CHUNK_BLOCK, event);
+        }
+        if (tabKey == CreativeModeTabs.INGREDIENTS) {
+           addAfter(Items.RAW_IRON, PigsteelItems.PIGSTEEL_CHUNK, event);
         }
     }
 
