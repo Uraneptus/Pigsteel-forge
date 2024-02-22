@@ -22,7 +22,7 @@ public class ZombifiableSlabBlock extends SlabBlock implements Zombifiable {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        this.randomTick(state, level, pos, random);
+        this.onRandomTick(state, level, pos, random);
     }
 
     @Override

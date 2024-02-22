@@ -35,6 +35,30 @@ public class PigsteelItemModelProvider extends ItemModelProvider {
         basicBlockItem(PigsteelBlocks.WAXED_INFECTED_REFINED_PIGSTEEL);
         basicBlockItem(PigsteelBlocks.WAXED_CORRUPTED_REFINED_PIGSTEEL);
         basicBlockItem(PigsteelBlocks.WAXED_ZOMBIFIED_REFINED_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL);
+        basicBlockItem(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS);
+        basicBlockItem(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB);
+        basicBlockItem(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {

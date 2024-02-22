@@ -7,11 +7,13 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.function.Supplier;
+
 public class ZombifiableStairsBlock extends StairBlock implements Zombifiable {
 
     private ZombificationLevel zombificationLevel;
 
-    public ZombifiableStairsBlock(ZombificationLevel zombificationLevel, BlockState baseBlockState, Properties properties) {
+    public ZombifiableStairsBlock(ZombificationLevel zombificationLevel, Supplier<BlockState> baseBlockState, Properties properties) {
         super(baseBlockState, properties);
         this.zombificationLevel = zombificationLevel;
     }

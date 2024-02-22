@@ -33,6 +33,30 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
         basicBlockWithTextureOf(PigsteelBlocks.WAXED_INFECTED_REFINED_PIGSTEEL, PigsteelBlocks.INFECTED_REFINED_PIGSTEEL);
         basicBlockWithTextureOf(PigsteelBlocks.WAXED_CORRUPTED_REFINED_PIGSTEEL, PigsteelBlocks.CORRUPTED_REFINED_PIGSTEEL);
         basicBlockWithTextureOf(PigsteelBlocks.WAXED_ZOMBIFIED_REFINED_PIGSTEEL, PigsteelBlocks.ZOMBIFIED_REFINED_PIGSTEEL);
+        basicBlock(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        basicBlock(PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        basicBlock(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        basicBlock(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        basicBlockWithTextureOf(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        basicBlockWithTextureOf(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        basicBlockWithTextureOf(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        basicBlockWithTextureOf(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        modStairsBlock(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+        modSlabBlock(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
     }
 
     private void basicBlock(Supplier<? extends Block> block) {
@@ -48,14 +72,11 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
                 models().cubeColumn(name(block.get()), modBlockLocation(name(block.get())), modBlockLocation(name(block.get()) + "_top"))).build());
     }
 
-    private void modStairsBlock(Supplier<? extends Block> block, String texture) {
-        stairsBlock((StairBlock) block.get(), modBlockLocation(texture));
-    }
-    private void modWallBlock(Supplier<? extends Block> block, String texture) {
-        wallBlock((WallBlock) block.get(), modBlockLocation(texture));
+    private void modStairsBlock(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
+        stairsBlock((StairBlock) block.get(), blockTexture(blockForTexture.get()));
     }
 
-    private void modSlabBlock(Supplier<? extends Block> block, String texture) {
-        slabBlock((SlabBlock) block.get(), modBlockLocation(texture), modBlockLocation(texture));
+    private void modSlabBlock(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
+        slabBlock((SlabBlock) block.get(), blockTexture(blockForTexture.get()), blockTexture(blockForTexture.get()));
     }
 }

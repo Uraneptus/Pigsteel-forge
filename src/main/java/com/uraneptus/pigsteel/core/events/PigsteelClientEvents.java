@@ -23,9 +23,37 @@ public class PigsteelClientEvents {
         ResourceKey<CreativeModeTab> tabKey = event.getTabKey();
         if (tabKey == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(PigsteelBlocks.UNAFFECTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_SLAB);
             event.accept(PigsteelBlocks.INFECTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.INFECTED_CUT_PIGSTEEL_SLAB);
             event.accept(PigsteelBlocks.CORRUPTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_SLAB);
             event.accept(PigsteelBlocks.ZOMBIFIED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_SLAB);
+            event.accept(PigsteelBlocks.WAXED_UNAFFECTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.WAXED_UNAFFECTED_CUT_PIGSTEEL_SLAB);
+            event.accept(PigsteelBlocks.WAXED_INFECTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_SLAB);
+            event.accept(PigsteelBlocks.WAXED_CORRUPTED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB);
+            event.accept(PigsteelBlocks.WAXED_ZOMBIFIED_REFINED_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL);
+            event.accept(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS);
+            event.accept(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB);
         }
         if (tabKey == CreativeModeTabs.NATURAL_BLOCKS) {
             addBefore(Items.ANCIENT_DEBRIS, PigsteelBlocks.PORKSLAG, event);
