@@ -4,21 +4,36 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.BiMap;
 import com.uraneptus.pigsteel.core.other.tags.PigsteelBlockTags;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.HoneycombItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChangeOverTimeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
+import net.minecraftforge.common.extensions.IForgeBlock;
 
 import java.util.Optional;
 import java.util.function.Supplier;
 
 public interface Zombifiable extends ChangeOverTimeBlock<Zombifiable.ZombificationLevel> {
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> PigsteelBlocks.NEXT_BY_BLOCK.get().inverse());
+    Supplier<BiMap<Block, Block>> PREVIOUS_WAXED_BY_BLOCK = Suppliers.memoize(() -> PigsteelBlocks.NEXT_WAXED_BY_BLOCK.get().inverse());
     float blockInfluence = 0.1F;
     float baseChance = 0.9F;
 
@@ -87,8 +102,42 @@ public interface Zombifiable extends ChangeOverTimeBlock<Zombifiable.Zombificati
         return Optional.ofNullable(PREVIOUS_BY_BLOCK.get().get(state.getBlock())).map((block) -> block.withPropertiesOf(state));
     }
 
+    static Optional<BlockState> getPreviousWaxed(BlockState state) {
+        return Optional.ofNullable(PREVIOUS_WAXED_BY_BLOCK.get().get(state.getBlock())).map((block) -> block.withPropertiesOf(state));
+    }
+
     default boolean canRandomTick(BlockState state) {
         return Optional.ofNullable(PigsteelBlocks.NEXT_BY_BLOCK.get().get(state.getBlock())).isPresent() && !PigsteelBlocks.NEXT_WAXED_BY_BLOCK.get().containsValue(state.getBlock());
+    }
+
+    static InteractionResult applyWax(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        ItemStack itemInHand = player.getItemInHand(hand);
+        if (itemInHand.getItem() instanceof HoneycombItem) {
+            if (PigsteelBlocks.NEXT_WAXED_BY_BLOCK.get().containsKey(state.getBlock())) {
+                if (player instanceof ServerPlayer serverPlayer) {
+                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger(serverPlayer, pos, itemInHand);
+                }
+                level.setBlock(pos, PigsteelBlocks.NEXT_WAXED_BY_BLOCK.get().get(state.getBlock()).withPropertiesOf(state), 11);
+                level.playSound(player, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.levelEvent(player, 3003, pos, 0);
+
+                if (!player.isCreative() && !player.getAbilities().instabuild) {
+                    itemInHand.shrink(1);
+                }
+                return InteractionResult.sidedSuccess(true);
+            }
+        }
+        return InteractionResult.PASS;
+    }
+
+    default BlockState handleAxe(BlockState returnable, BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
+        if (action == ToolActions.AXE_SCRAPE) {
+            return getPrevious(state).isPresent() ? getPrevious(state).get().getBlock().withPropertiesOf(state) : null;
+        }
+        if (action == ToolActions.AXE_WAX_OFF) {
+            return getPreviousWaxed(state).isPresent() ? getPreviousWaxed(state).get().getBlock().withPropertiesOf(state) : null;
+        }
+        return returnable;
     }
 
     enum ZombificationLevel implements StringRepresentable {
