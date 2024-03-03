@@ -2,7 +2,6 @@ package com.uraneptus.pigsteel;
 
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
 import com.uraneptus.pigsteel.core.registry.PigsteelItems;
-import com.uraneptus.pigsteel.core.other.QuarkRecipeConditionFlag;
 import com.uraneptus.pigsteel.data.client.PigsteelBlockStateProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelItemModelProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelLangProvider;
@@ -44,7 +43,6 @@ public class PigsteelMod
         event_bus.addListener(this::setup);
         event_bus.addListener(this::gatherData);
 
-        CraftingHelper.register(new QuarkRecipeConditionFlag.Serializer());
         PigsteelItems.ITEMS.register(event_bus);
         PigsteelBlocks.BLOCKS.register(event_bus);
         

@@ -2,7 +2,6 @@ package com.uraneptus.pigsteel.data.client;
 
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
-import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -57,6 +56,14 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
         modSlabBlock(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.INFECTED_CUT_PIGSTEEL);
         modSlabBlock(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL);
         modSlabBlock(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL);
+        pigsteelLanternBlock(PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
     }
 
     private void basicBlock(Supplier<? extends Block> block) {
@@ -78,5 +85,23 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
 
     private void modSlabBlock(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
         slabBlock((SlabBlock) block.get(), blockTexture(blockForTexture.get()), blockTexture(blockForTexture.get()));
+    }
+
+    private void pigsteelLanternBlock(Supplier<? extends Block> block) {
+        ModelFile file = models().withExistingParent(name(block.get()), modBlockLocation("template_pigsteel_lantern"))
+                .texture("all", modBlockLocation(name(block.get())));
+
+        getVariantBuilder(block.get()).forAllStatesExcept(blockState -> ConfiguredModel.builder()
+                .modelFile(file).rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                .build(), BlockStateProperties.WATERLOGGED);
+    }
+
+    private void pigsteelLanternBlock(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
+        ModelFile file = models().withExistingParent(name(block.get()), modBlockLocation("template_pigsteel_lantern"))
+                .texture("all", modBlockLocation(name(blockForTexture.get())));
+
+        getVariantBuilder(block.get()).forAllStatesExcept(blockState -> ConfiguredModel.builder()
+                .modelFile(file).rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                .build(), BlockStateProperties.WATERLOGGED);
     }
 }

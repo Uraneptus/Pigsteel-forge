@@ -47,16 +47,13 @@ public class ZombifiableBlock extends Block implements Zombifiable {
     @Override
     @Nullable
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
-        /*if (action == ToolActions.AXE_SCRAPE) {
+        if (action == ToolActions.AXE_SCRAPE) {
             return Zombifiable.getPrevious(state).isPresent() ? Zombifiable.getPrevious(state).get().getBlock().withPropertiesOf(state) : null;
         }
         if (action == ToolActions.AXE_WAX_OFF) {
             return Zombifiable.getPreviousWaxed(state).isPresent() ? Zombifiable.getPreviousWaxed(state).get().getBlock().withPropertiesOf(state) : null;
         }
         return super.getToolModifiedState(state, context, action, simulate);
-
-         */
-        return handleAxe(super.getToolModifiedState(state, context, action, simulate), state, context, action, simulate);
     }
 
     @Override

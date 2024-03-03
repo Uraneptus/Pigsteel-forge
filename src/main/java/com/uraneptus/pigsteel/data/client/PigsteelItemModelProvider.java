@@ -59,6 +59,14 @@ public class PigsteelItemModelProvider extends ItemModelProvider {
         basicBlockItem(PigsteelBlocks.WAXED_INFECTED_CUT_PIGSTEEL_SLAB);
         basicBlockItem(PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_SLAB);
         basicBlockItem(PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB);
+        blockItemWithItemTexture(PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {
@@ -76,6 +84,11 @@ public class PigsteelItemModelProvider extends ItemModelProvider {
 
     private void blockItemWithItemTexture(Supplier<? extends Block> blockForItem) {
         basicItem(blockForItem.get().asItem());
+    }
+
+    private void blockItemWithDiffItemTexture(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
+        withExistingParent(name(block.get()), GENERATED)
+                .texture(LAYER0, modItemLocation(name(blockForTexture.get())));
     }
 
 }

@@ -130,16 +130,6 @@ public interface Zombifiable extends ChangeOverTimeBlock<Zombifiable.Zombificati
         return InteractionResult.PASS;
     }
 
-    default BlockState handleAxe(BlockState returnable, BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
-        if (action == ToolActions.AXE_SCRAPE) {
-            return getPrevious(state).isPresent() ? getPrevious(state).get().getBlock().withPropertiesOf(state) : null;
-        }
-        if (action == ToolActions.AXE_WAX_OFF) {
-            return getPreviousWaxed(state).isPresent() ? getPreviousWaxed(state).get().getBlock().withPropertiesOf(state) : null;
-        }
-        return returnable;
-    }
-
     enum ZombificationLevel implements StringRepresentable {
         UNAFFECTED("", MapColor.COLOR_PURPLE),
         INFECTED("infected", MapColor.GRASS),

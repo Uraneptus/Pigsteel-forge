@@ -34,6 +34,14 @@
     "pigsteel:waxed_infected_cut_pigsteel_slab",
     "pigsteel:waxed_corrupted_cut_pigsteel_slab",
     "pigsteel:waxed_zombified_cut_pigsteel_slab",
+    "pigsteel:pigsteel_lantern",
+    "pigsteel:infected_pigsteel_lantern",
+    "pigsteel:corrupted_pigsteel_lantern",
+    "pigsteel:zombified_pigsteel_lantern",
+    "pigsteel:waxed_pigsteel_lantern",
+    "pigsteel:waxed_infected_pigsteel_lantern",
+    "pigsteel:waxed_corrupted_pigsteel_lantern",
+    "pigsteel:waxed_zombified_pigsteel_lantern",
     "#pigsteel:pigsteel_blocks",
     "#pigsteel:pigsteel_ores"
   ]
