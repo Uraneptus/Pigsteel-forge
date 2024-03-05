@@ -15,18 +15,6 @@ public class PigsteelProperties {
         return BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.NETHERITE_BLOCK).mapColor(color).randomTicks();
     }
 
-    public static BlockBehaviour.Properties zombifiedLanternBlock(MapColor color) {
-        return BlockBehaviour.Properties.of()
-                .forceSolidOn()
-                .requiresCorrectToolForDrops()
-                .strength(3.5F)
-                .sound(SoundType.LANTERN)
-                .lightLevel((blockState) -> 15)
-                .noOcclusion()
-                .pushReaction(PushReaction.DESTROY)
-                .mapColor(color);
-    }
-
     //ITEMS
     public static Item.Properties basePigsteelItem() {
         return new Item.Properties().fireResistant();

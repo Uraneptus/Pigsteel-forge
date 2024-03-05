@@ -63,6 +63,24 @@ public class PigsteelClientEvents {
         if (tabKey == CreativeModeTabs.INGREDIENTS) {
            addAfter(Items.RAW_IRON, PigsteelItems.PIGSTEEL_CHUNK, event);
         }
+        if (tabKey == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN, event);
+            addAfter(Items.SOUL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN, event);
+        }
     }
 
     private static void addBefore(Item before, Supplier<? extends ItemLike> inputItem, BuildCreativeModeTabContentsEvent event) {

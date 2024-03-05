@@ -5,6 +5,7 @@ import com.uraneptus.pigsteel.core.registry.PigsteelItems;
 import com.uraneptus.pigsteel.data.client.PigsteelBlockStateProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelItemModelProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelLangProvider;
+import com.uraneptus.pigsteel.data.server.PigsteelDatapackBuiltinEntriesProvider;
 import com.uraneptus.pigsteel.data.server.loot.PigsteelLootTableProvider;
 import com.uraneptus.pigsteel.data.tags.PigsteelBiomeTagsProvider;
 import com.uraneptus.pigsteel.data.tags.PigsteelBlockTagsProvider;
@@ -28,12 +29,8 @@ import java.util.concurrent.CompletableFuture;
 
 @Mod(PigsteelMod.MOD_ID)
 @Mod.EventBusSubscriber(modid = PigsteelMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class PigsteelMod
-{
+public class PigsteelMod {
     public static final String MOD_ID = "pigsteel";
-
-    public static boolean QUARK_FLAG = ModList.get().isLoaded("quark");
-
     public static ResourceLocation modPrefix(String path) {
         return new ResourceLocation(PigsteelMod.MOD_ID, path);
     }
@@ -70,6 +67,7 @@ public class PigsteelMod
         generator.addProvider(includeServer, new PigsteelItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), fileHelper));
         generator.addProvider(includeServer, new PigsteelBiomeTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(includeServer, new PigsteelLootTableProvider(packOutput));
+        generator.addProvider(includeServer, new PigsteelDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
         //generator.addProvider(includeServer, new PigsteelRecipeProvider(packOutput));
     }
 

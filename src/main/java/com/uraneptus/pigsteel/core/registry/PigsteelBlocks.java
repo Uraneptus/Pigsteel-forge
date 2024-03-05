@@ -9,6 +9,7 @@ import com.uraneptus.pigsteel.core.other.PigsteelProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -37,6 +38,9 @@ public class PigsteelBlocks {
             .put(PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN.get())
             .put(PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN.get())
             .put(PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN.get())
+            .put(PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN.get())
+            .put(PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN.get())
+            .put(PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN.get())
             .build());
 
     public static Supplier<BiMap<Block, Block>> NEXT_WAXED_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder()
@@ -60,6 +64,10 @@ public class PigsteelBlocks {
             .put(PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN.get())
             .put(PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN.get())
             .put(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN.get(), PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN.get())
+            .put(PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN.get())
+            .put(PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_SOUL_LANTERN.get())
+            .put(PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_SOUL_LANTERN.get())
+            .put(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN.get(), PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_SOUL_LANTERN.get())
             .build()
     );
 
@@ -120,6 +128,16 @@ public class PigsteelBlocks {
     public static final RegistryObject<Block> WAXED_CORRUPTED_PIGSTEEL_LANTERN = registerZombifiableLantern("waxed_corrupted_pigsteel_lantern", Zombifiable.ZombificationLevel.CORRUPTED);
     public static final RegistryObject<Block> WAXED_ZOMBIFIED_PIGSTEEL_LANTERN = registerZombifiableLantern("waxed_zombified_pigsteel_lantern", Zombifiable.ZombificationLevel.ZOMBIFIED);
 
+    public static final RegistryObject<Block> UNAFFECTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("pigsteel_soul_lantern", Zombifiable.ZombificationLevel.UNAFFECTED);
+    public static final RegistryObject<Block> INFECTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("infected_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.INFECTED);
+    public static final RegistryObject<Block> CORRUPTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("corrupted_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.CORRUPTED);
+    public static final RegistryObject<Block> ZOMBIFIED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("zombified_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.ZOMBIFIED);
+
+    public static final RegistryObject<Block> WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("waxed_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.UNAFFECTED);
+    public static final RegistryObject<Block> WAXED_INFECTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("waxed_infected_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.INFECTED);
+    public static final RegistryObject<Block> WAXED_CORRUPTED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("waxed_corrupted_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.CORRUPTED);
+    public static final RegistryObject<Block> WAXED_ZOMBIFIED_PIGSTEEL_SOUL_LANTERN = registerZombifiableSoulLantern("waxed_zombified_pigsteel_soul_lantern", Zombifiable.ZombificationLevel.ZOMBIFIED);
+
     private static RegistryObject<Block> registerZombifiableStairs(String name, Supplier<Block> baseBlock, Zombifiable.ZombificationLevel level) {
         return register(name, true, () -> new ZombifiableStairsBlock(level, () -> baseBlock.get().defaultBlockState(), PigsteelProperties.zombifiedBlock(level.getMapColor())));
     }
@@ -128,8 +146,12 @@ public class PigsteelBlocks {
         return register(name, true, () -> new ZombifiableSlabBlock(level, PigsteelProperties.zombifiedBlock(level.getMapColor())));
     }
 
+    private static RegistryObject<Block> registerZombifiableSoulLantern(String name, Zombifiable.ZombificationLevel level) {
+        return register(name, true, () -> new ZombifiableLanternBlock(level, BlockBehaviour.Properties.copy(Blocks.SOUL_LANTERN).mapColor(level.getMapColor()).randomTicks()));
+    }
+
     private static RegistryObject<Block> registerZombifiableLantern(String name, Zombifiable.ZombificationLevel level) {
-        return register(name, true, () -> new ZombifiableLanternBlock(level, PigsteelProperties.zombifiedLanternBlock(level.getMapColor()).randomTicks()));
+        return register(name, true, () -> new ZombifiableLanternBlock(level, BlockBehaviour.Properties.copy(Blocks.LANTERN).mapColor(level.getMapColor()).randomTicks()));
     }
 
     private static RegistryObject<Block> registerZombifiableBlock(String name, Zombifiable.ZombificationLevel level) {

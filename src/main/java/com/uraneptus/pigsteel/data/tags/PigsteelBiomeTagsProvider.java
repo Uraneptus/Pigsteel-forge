@@ -19,6 +19,11 @@ public class PigsteelBiomeTagsProvider extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(PigsteelBiomeTags.HAS_EXTRA_PIGSTEEL).add(Biomes.BASALT_DELTAS);
-        tag(PigsteelBiomeTags.HAS_NO_PIGSTEEL);
+        tag(PigsteelBiomeTags.PIGSTEEL_GENERATE_IN).add(
+                Biomes.BASALT_DELTAS,
+                Biomes.NETHER_WASTES,
+                Biomes.SOUL_SAND_VALLEY,
+                Biomes.CRIMSON_FOREST,
+                Biomes.WARPED_FOREST);
     }
 }

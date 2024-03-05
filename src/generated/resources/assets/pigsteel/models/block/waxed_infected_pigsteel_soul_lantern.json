@@ -1,0 +1,7 @@
+{
+  "parent": "pigsteel:block/template_pigsteel_lantern",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "pigsteel:block/infected_pigsteel_soul_lantern"
+  }
+}

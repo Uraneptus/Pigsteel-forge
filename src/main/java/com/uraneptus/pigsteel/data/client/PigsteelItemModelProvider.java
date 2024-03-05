@@ -67,6 +67,14 @@ public class PigsteelItemModelProvider extends ItemModelProvider {
         blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
         blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
         blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithItemTexture(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN);
+        blockItemWithDiffItemTexture(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {

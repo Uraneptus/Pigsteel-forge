@@ -64,6 +64,14 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
         pigsteelLanternBlock(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_LANTERN);
         pigsteelLanternBlock(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_LANTERN);
         pigsteelLanternBlock(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_INFECTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.INFECTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_CORRUPTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.CORRUPTED_PIGSTEEL_SOUL_LANTERN);
+        pigsteelLanternBlock(PigsteelBlocks.WAXED_ZOMBIFIED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.ZOMBIFIED_PIGSTEEL_SOUL_LANTERN);
     }
 
     private void basicBlock(Supplier<? extends Block> block) {
