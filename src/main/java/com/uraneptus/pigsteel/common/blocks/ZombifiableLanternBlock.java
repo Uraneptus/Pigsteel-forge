@@ -4,9 +4,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
@@ -19,6 +23,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -42,9 +47,10 @@ public class ZombifiableLanternBlock extends Block implements Zombifiable, Simpl
 
     public ZombifiableLanternBlock(Zombifiable.ZombificationLevel zombificationLevel, Properties properties) {
         super(properties);
-        this.zombificationLevel = zombificationLevel;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
+        this.zombificationLevel = zombificationLevel;
     }
+
     @Override
     public MapColor defaultMapColor() {
         return getAge().getMapColor();
@@ -54,9 +60,15 @@ public class ZombifiableLanternBlock extends Block implements Zombifiable, Simpl
     public boolean isRandomlyTicking(BlockState state) {
         return this.canRandomTick(state);
     }
+
     @Override
     public void randomTick(BlockState state, ServerLevel pLevel, BlockPos pos, RandomSource random) {
         this.onRandomTick(state, pLevel, pos, random);
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+        return Zombifiable.applyWax(state, level, pos, player, hand, result);
     }
 
     @Override

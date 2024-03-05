@@ -1,5 +1,6 @@
 {
   "parent": "pigsteel:block/template_pigsteel_lantern",
+  "render_type": "minecraft:cutout",
   "textures": {
     "all": "pigsteel:block/corrupted_pigsteel_lantern"
   }

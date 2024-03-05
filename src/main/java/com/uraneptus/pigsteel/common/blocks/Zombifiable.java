@@ -61,7 +61,6 @@ public interface Zombifiable extends ChangeOverTimeBlock<Zombifiable.Zombificati
                     chance -= blockInfluence / 2;
                 }
             }
-            chance -= (float) pState.getLightEmission() / 10;
             if (pLevel.getRandom().nextFloat() < chance) {
                 getNext(pState).ifPresent(blockState -> pLevel.setBlockAndUpdate(pPos, blockState));
             }

@@ -89,7 +89,7 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
 
     private void pigsteelLanternBlock(Supplier<? extends Block> block) {
         ModelFile file = models().withExistingParent(name(block.get()), modBlockLocation("template_pigsteel_lantern"))
-                .texture("all", modBlockLocation(name(block.get())));
+                .texture("all", modBlockLocation(name(block.get()))).renderType("cutout");
 
         getVariantBuilder(block.get()).forAllStatesExcept(blockState -> ConfiguredModel.builder()
                 .modelFile(file).rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
@@ -98,7 +98,7 @@ public class PigsteelBlockStateProvider extends BlockStateProvider {
 
     private void pigsteelLanternBlock(Supplier<? extends Block> block, Supplier<? extends Block> blockForTexture) {
         ModelFile file = models().withExistingParent(name(block.get()), modBlockLocation("template_pigsteel_lantern"))
-                .texture("all", modBlockLocation(name(blockForTexture.get())));
+                .texture("all", modBlockLocation(name(blockForTexture.get()))).renderType("cutout");
 
         getVariantBuilder(block.get()).forAllStatesExcept(blockState -> ConfiguredModel.builder()
                 .modelFile(file).rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)

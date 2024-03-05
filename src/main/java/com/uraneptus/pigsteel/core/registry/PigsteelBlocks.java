@@ -129,7 +129,7 @@ public class PigsteelBlocks {
     }
 
     private static RegistryObject<Block> registerZombifiableLantern(String name, Zombifiable.ZombificationLevel level) {
-        return register(name, true, () -> new ZombifiableLanternBlock(level, PigsteelProperties.zombifiedBlock(level.getMapColor())));
+        return register(name, true, () -> new ZombifiableLanternBlock(level, PigsteelProperties.zombifiedLanternBlock(level.getMapColor()).randomTicks()));
     }
 
     private static RegistryObject<Block> registerZombifiableBlock(String name, Zombifiable.ZombificationLevel level) {
