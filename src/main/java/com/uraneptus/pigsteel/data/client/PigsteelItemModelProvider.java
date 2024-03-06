@@ -2,6 +2,7 @@ package com.uraneptus.pigsteel.data.client;
 
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
+import com.uraneptus.pigsteel.core.registry.PigsteelItems;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -25,6 +26,7 @@ public class PigsteelItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(PigsteelItems.PIGSTEEL_CHUNK);
         basicBlockItem(PigsteelBlocks.PORKSLAG);
         basicBlockItem(PigsteelBlocks.PIGSTEEL_CHUNK_BLOCK);
         basicBlockItem(PigsteelBlocks.UNAFFECTED_REFINED_PIGSTEEL);

@@ -2,6 +2,7 @@ package com.uraneptus.pigsteel.data.client;
 
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
+import com.uraneptus.pigsteel.core.registry.PigsteelItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -22,6 +23,8 @@ public class PigsteelLangProvider extends LanguageProvider {
     protected void addTranslations() {
         PigsteelBlocks.SIMPLE_TRANSLATION.forEach(this::forBlock);
         addBlock(PigsteelBlocks.PIGSTEEL_CHUNK_BLOCK, "Block of Pigsteel Chunks");
+        forItem(PigsteelItems.PIGSTEEL_CHUNK);
+        add("trim_material.pigsteel.pigsteel", "Pigsteel");
     }
 
     protected void forItem(Supplier<? extends Item> item) {

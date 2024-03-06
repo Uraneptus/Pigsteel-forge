@@ -48,5 +48,7 @@
   "block.pigsteel.zombified_cut_pigsteel_stairs": "Zombified Cut Pigsteel Stairs",
   "block.pigsteel.zombified_pigsteel_lantern": "Zombified Pigsteel Lantern",
   "block.pigsteel.zombified_pigsteel_soul_lantern": "Zombified Pigsteel Soul Lantern",
-  "block.pigsteel.zombified_refined_pigsteel": "Zombified Refined Pigsteel"
+  "block.pigsteel.zombified_refined_pigsteel": "Zombified Refined Pigsteel",
+  "item.pigsteel.pigsteel_chunk": "Pigsteel Chunk",
+  "trim_material.pigsteel.pigsteel": "Pigsteel"
 }

@@ -3,6 +3,7 @@ package com.uraneptus.pigsteel.data.tags;
 import com.uraneptus.pigsteel.PigsteelMod;
 import com.uraneptus.pigsteel.core.other.tags.PigsteelItemTags;
 import com.uraneptus.pigsteel.core.registry.PigsteelBlocks;
+import com.uraneptus.pigsteel.core.registry.PigsteelItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -26,5 +27,6 @@ public class PigsteelItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(PigsteelItemTags.PIGSTEEL_ORES).add(PigsteelBlocks.PORKSLAG.get().asItem());
         tag(Tags.Items.ORES).addTag(PigsteelItemTags.PIGSTEEL_ORES);
+        tag(ItemTags.TRIM_MATERIALS).add(PigsteelItems.PIGSTEEL_CHUNK.get());
     }
 }
