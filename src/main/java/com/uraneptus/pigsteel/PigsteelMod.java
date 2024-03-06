@@ -6,6 +6,7 @@ import com.uraneptus.pigsteel.data.client.PigsteelBlockStateProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelItemModelProvider;
 import com.uraneptus.pigsteel.data.client.PigsteelLangProvider;
 import com.uraneptus.pigsteel.data.server.PigsteelDatapackBuiltinEntriesProvider;
+import com.uraneptus.pigsteel.data.server.PigsteelRecipeProvider;
 import com.uraneptus.pigsteel.data.server.loot.PigsteelLootTableProvider;
 import com.uraneptus.pigsteel.data.tags.PigsteelBiomeTagsProvider;
 import com.uraneptus.pigsteel.data.tags.PigsteelBlockTagsProvider;
@@ -66,7 +67,7 @@ public class PigsteelMod {
         generator.addProvider(includeServer, new PigsteelBiomeTagsProvider(packOutput, lookupProvider, fileHelper));
         generator.addProvider(includeServer, new PigsteelLootTableProvider(packOutput));
         generator.addProvider(includeServer, new PigsteelDatapackBuiltinEntriesProvider(packOutput, lookupProvider));
-        //generator.addProvider(includeServer, new PigsteelRecipeProvider(packOutput));
+        generator.addProvider(includeServer, new PigsteelRecipeProvider(packOutput));
     }
 
 

@@ -79,11 +79,16 @@ repositories {
     maven {
         url "https://www.cursemaven.com"
     }
+    maven {
+        name "JEI maven"
+        url = "https://maven.blamejared.com/"
+    }
 }
 
 dependencies {
 
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:15.2.0.27")
     //runtimeOnly fg.deobf("curse.maven:catalogue-459701:3873264")
     //runtimeOnly fg.deobf("curse.maven:quark-243121:3873471")
     //runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3857246")

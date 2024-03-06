@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "pigsteel:pigsteel_chunk"
+    },
+    "X": {
+      "item": "minecraft:soul_torch"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "item": "pigsteel:pigsteel_soul_lantern"
+  },
+  "show_notification": true
+}
