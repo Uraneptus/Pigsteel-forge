@@ -27,6 +27,7 @@ public class PigsteelRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         oreCookingRecipes(RecipeCategory.MISC, PigsteelBlocks.PORKSLAG, () -> Items.IRON_INGOT, 0.7F, consumer);
+        oreCookingRecipes(RecipeCategory.MISC, PigsteelItems.PIGSTEEL_CHUNK, () -> Items.IRON_NUGGET, 0.7F, consumer);
         packableBlockRecipes(PigsteelItems.PIGSTEEL_CHUNK, PigsteelBlocks.PIGSTEEL_CHUNK_BLOCK, consumer);
         tilingBlockRecipes(PigsteelItems.PIGSTEEL_CHUNK, PigsteelBlocks.UNAFFECTED_REFINED_PIGSTEEL, consumer);
         refinedToCutVariants(PigsteelBlocks.UNAFFECTED_REFINED_PIGSTEEL, Optional.of(PigsteelBlocks.WAXED_UNAFFECTED_REFINED_PIGSTEEL), PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.UNAFFECTED_CUT_PIGSTEEL_STAIRS, consumer);
@@ -53,8 +54,8 @@ public class PigsteelRecipeProvider extends RecipeProvider {
         waxRecipes(PigsteelBlocks.CORRUPTED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.WAXED_CORRUPTED_CUT_PIGSTEEL_STAIRS, consumer);
         waxRecipes(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_SLAB, PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_SLAB, consumer);
         waxRecipes(PigsteelBlocks.ZOMBIFIED_CUT_PIGSTEEL_STAIRS, PigsteelBlocks.WAXED_ZOMBIFIED_CUT_PIGSTEEL_STAIRS, consumer);
-        lanternRecipes(() -> Items.TORCH, PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN, consumer);
-        lanternRecipes(() -> Items.SOUL_TORCH, PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN, consumer);
+        lanternRecipes(() -> Items.TORCH, PigsteelBlocks.UNAFFECTED_PIGSTEEL_LANTERN, PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_LANTERN, consumer);
+        lanternRecipes(() -> Items.SOUL_TORCH, PigsteelBlocks.UNAFFECTED_PIGSTEEL_SOUL_LANTERN, PigsteelBlocks.WAXED_UNAFFECTED_PIGSTEEL_SOUL_LANTERN, consumer);
     }
 
 
@@ -102,10 +103,11 @@ public class PigsteelRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(ingredient.get()), has(ingredient.get())).save(consumer, stonecuttingPath(prefix + "_stonecutting"));
     }
 
-    protected static void lanternRecipes(Supplier<? extends ItemLike> torch, Supplier<? extends ItemLike> result, Consumer<FinishedRecipe> consumer) {
+    protected static void lanternRecipes(Supplier<? extends ItemLike> torch, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> waxed, Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result.get()).define('#', PigsteelItems.PIGSTEEL_CHUNK.get()).define('X', torch.get())
                 .pattern("###").pattern("#X#").pattern("###").unlockedBy(getHasName(PigsteelItems.PIGSTEEL_CHUNK.get()), has(PigsteelItems.PIGSTEEL_CHUNK.get()))
                 .save(consumer, craftingPath(getItemName(result.get())));
+        waxRecipes(result, waxed, consumer);
     }
 
     protected static void refinedToCutVariants(Supplier<? extends ItemLike> refined, Optional<Supplier<? extends ItemLike>> optionalWaxed, Supplier<? extends ItemLike> cut, Supplier<? extends ItemLike> cutSlab, Supplier<? extends ItemLike> cutStair, Consumer<FinishedRecipe> consumer) {
